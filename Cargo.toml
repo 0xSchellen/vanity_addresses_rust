@@ -1,0 +1,16 @@
+[package]
+name = "vanity_addresses_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+redis ="0.22.1"
+hex = { version = "0.4.3", default-features = false, features = ["std"] }
+k256 = { version = "0.11", default-features = false, features = ["keccak256", "ecdsa", "std"] }
+ethers = "1.0.2"
+crypto-bigint = { version = "0.4.9", features = ["generic-array"] }
+fastrand = "1.8.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
